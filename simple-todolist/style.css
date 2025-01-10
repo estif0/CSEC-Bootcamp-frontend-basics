@@ -5,12 +5,17 @@
   --text-dark: #fff;
   --primary-light: #6c63ff;
   --primary-dark: #5850dd;
+  --secondary-light: #fff;
+  --secondary-dark: #333;
+  --border-light: #ccc;
+  --border-dark: #444;
 }
 
 body {
   font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   background-color: var(--bg-light);
@@ -34,8 +39,8 @@ body.dark-mode {
 h1 {
   text-align: center;
   text-transform: uppercase;
-  font-size: 1.5rem;
   font-weight: bolder;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -52,6 +57,12 @@ h1 {
   flex-grow: 1;
   border: 1px solid var(--primary-light);
   border-radius: 4px;
+  background-color: var(--secondary-light);
+}
+
+body.dark-mode .search-bar {
+  border-color: var(--primary-dark);
+  background-color: var(--secondary-dark);
 }
 
 .search-bar input {
@@ -59,6 +70,12 @@ h1 {
   padding: 10px;
   border-radius: 4px;
   border: none;
+  background-color: transparent;
+  color: var(--text-light);
+}
+
+body.dark-mode .search-bar input {
+  color: var(--text-dark);
 }
 
 .search-bar input:focus {
@@ -68,10 +85,14 @@ h1 {
 .search-btn {
   padding: 10px 15px;
   border: none;
-  background-color: white;
+  background-color: transparent;
   color: var(--primary-light);
   cursor: pointer;
   border-radius: 4px;
+}
+
+body.dark-mode .search-btn {
+  color: var(--primary-dark);
 }
 
 #filter,
@@ -84,9 +105,37 @@ h1 {
   border-radius: 4px;
 }
 
+body.dark-mode #filter,
+body.dark-mode .theme-btn {
+  background-color: var(--primary-dark);
+}
+
+#filter {
+  color: var(--text-dark);
+  background-color: var(--primary-light);
+}
+
+body.dark-mode #filter {
+  background-color: var(--primary-dark);
+}
+
+option {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+body.dark-mode option {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
 option:hover {
-  background-color: #928ed2;
-  color: var(--primary-light);
+  background-color: var(--primary-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode option:hover {
+  background-color: var(--primary-dark);
 }
 
 .note-list {
@@ -104,9 +153,14 @@ option:hover {
   justify-content: space-between;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #fff;
+  background-color: var(--secondary-light);
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .note-item {
+  background-color: var(--secondary-dark);
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .note-item.completed {
@@ -133,6 +187,10 @@ option:hover {
   color: var(--primary-light);
 }
 
+body.dark-mode .note-actions button {
+  color: var(--primary-dark);
+}
+
 .add-note-btn {
   position: fixed;
   bottom: 20px;
@@ -146,6 +204,10 @@ option:hover {
   font-size: 1rem;
 }
 
+body.dark-mode .add-note-btn {
+  background-color: var(--primary-dark);
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -154,34 +216,62 @@ option:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: var(--bg-light);
+  color: var(--text-light);
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border: 1px solid var(--border-light);
   width: 80%;
   max-width: 500px;
   border-radius: 4px;
 }
 
+body.dark-mode .modal-content {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  border-color: var(--border-dark);
+}
+
 .modal-content h2 {
-  margin-top: 0;
+  margin-top: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
 .modal-content input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  margin: auto;
+  border: 1px solid var(--primary-light);
+  margin-bottom: 100px;
   border-radius: 4px;
+  background-color: var(--secondary-light);
+  color: var(--text-light);
+}
+
+body.dark-mode .modal-content input {
+  border-color: var(--primary-dark);
+  background-color: var(--secondary-dark);
+  color: var(--text-dark);
+}
+
+.modal-content input:focus {
+  outline: var(--primary-light);
+}
+
+body.dark-mode .modal-content input:focus {
+  outline: var(--primary-dark);
 }
 
 .modal-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -197,7 +287,18 @@ option:hover {
   color: var(--text-dark);
 }
 
+body.dark-mode #apply-btn {
+  background-color: var(--primary-dark);
+}
+
 #cancel-btn {
-  background-color: #ccc;
-  color: var(--text-light);
+  background-color: var(--secondary-light);
+  color: var(--primary-light);
+  border: 1px solid var(--primary-light);
+}
+
+body.dark-mode #cancel-btn {
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
 }
