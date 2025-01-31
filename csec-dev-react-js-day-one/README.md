@@ -1,50 +1,28 @@
-# React + TypeScript + Vite
+# Pricing Cards
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a simple example of pricing cards using ReactJS, TypeScript, and TailwindCSS. The project was created to practice the use of TailwindCSS, TypeScript and React to create a simple example of a pricing card.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The `PricingCard` component is a simple component that receives a `planName`, `pricePerMonth`, `storage`, `features` as props and renders a card with the information.
 
-## Expanding the ESLint configuration
+Typescript was used to define the types of the props to make it less prone to errors.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+TailwindCSS was used to style the components and make them responsive.
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ReactJS
+- TypeScript
+- TailwindCSS
+- Vite
+- ESLint
+- Prettier
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## How to run
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository
+2. Run `pnpm install`
+3. Run `pnpm dev`
+4. Access `http://localhost:5173`
+5. Enjoy!
