@@ -1,62 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Todolist</title>
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <main class="container">
-      <h1>Todolist</h1>
-      <div class="options">
-        <div class="search-bar">
-          <input
-            type="text"
-            id="search-input"
-            class="search-input"
-            placeholder="Search note..."
-          />
-          <button class="search-btn">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
-        <select id="filter">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="incomplete">Incomplete</option>
-        </select>
-        <button id="theme-toggle" class="theme-btn">
-          <i class="fas fa-sun" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div class="note-list">
-        <ul id="notes"></ul>
-      </div>
-      <button id="add-note-btn" class="add-note-btn">
-        <i class="fas fa-plus"></i>
-      </button>
-    </main>
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <h2>New Note</h2>
-        <input
-          type="text"
-          id="new-note-input"
-          placeholder="Input your note..."
-        />
-        <div class="modal-buttons">
-          <button id="apply-btn">Apply</button>
-          <button id="cancel-btn">Cancel</button>
-        </div>
-      </div>
-    </div>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
