@@ -26,3 +26,7 @@ TailwindCSS was used to style the components and make them responsive.
 3. Run `pnpm dev`
 4. Access `http://localhost:5173`
 5. Enjoy!
+
+## Preview
+
+![Pricing Cards](./public/pricing-cards-preview.png)
